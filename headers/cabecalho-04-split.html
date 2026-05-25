@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DPE-MT | Cabeçalho 04 — Split Bicolor</title>
+  <title>DPE-MT | Cabeçalho 01 — Gradiente Horizontal</title>
   <link rel="stylesheet" href="../css/tokens.css">
   <style>
     html, body {
@@ -13,141 +13,139 @@
     }
 
     .header {
-      height: 88px;
+      height: 220px;
       width: 100%;
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
+      display: flex;
       align-items: center;
+      background: linear-gradient(
+        100deg,
+        var(--verde-escuro) 0%,
+        var(--verde-principal) 50%,
+        var(--verde-claro) 100%
+      );
       position: relative;
       overflow: hidden;
     }
 
-    /* Metade esquerda verde */
+    /* Textura sutil de padrão */
     .header::before {
       content: '';
       position: absolute;
-      left: 0; top: 0;
-      width: 50%;
-      height: 100%;
-      background: var(--verde-principal);
-      z-index: 0;
+      inset: 0;
+      background-image: repeating-linear-gradient(
+        -45deg,
+        rgba(255,255,255,.03) 0px,
+        rgba(255,255,255,.03) 1px,
+        transparent 1px,
+        transparent 8px
+      );
+      pointer-events: none;
     }
 
-    /* Metade direita branca */
-    .header::after {
-      content: '';
-      position: absolute;
-      right: 0; top: 0;
-      width: 50%;
+    .brand-area {
+      width: 148px;
       height: 100%;
       background: var(--branco);
-      z-index: 0;
-    }
-
-    .left-content {
-      padding-left: var(--gap-xl);
-      position: relative;
-      z-index: 1;
-    }
-
-    .institution-name {
-      font-family: var(--font-display);
-      font-size: .65rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 2.5px;
-      color: rgba(255,255,255,.70);
-      margin-bottom: 5px;
-    }
-
-    .dashboard-title {
-      font-family: var(--font-display);
-      font-size: 1.10rem;
-      font-weight: 700;
-      color: var(--branco);
-      line-height: 1.15;
-    }
-
-    /* Logo centralizada sobre a divisória */
-    .brand-center {
-      width: 120px;
-      height: 80px;
-      background: var(--branco);
-      border-radius: 8px;
-      box-shadow: var(--shadow-lg);
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
-      z-index: 2;
       flex-shrink: 0;
-    }
-
-    .logo {
-      height: 60px;
-      width: auto;
-      object-fit: contain;
-    }
-
-    .right-content {
-      padding-right: var(--gap-xl);
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
+      box-shadow: 2px 0 12px rgba(0,0,0,.10);
       position: relative;
       z-index: 1;
     }
 
-    .right-label {
+    .logo {
+      height: 110px;
+      width: auto;
+      object-fit: contain;
+      border-radius: 16px;
+    }
+
+    /* Divisor decorativo */
+    .divider {
+      width: 2px;
+      height: 0px;
+      background: rgba(255,255,255,.30);
+      margin: 0 var(--gap-lg);
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .title {
+      font-family: var(--font-display);
+      color: var(--branco);
+      font-size: 1.30rem;
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -.3px;
+    }
+
+    .subtitle {
+      margin-top: 5px;
+      color: rgba(255,255,255,.80);
       font-family: var(--font-body);
-      font-size: .62rem;
+      font-size: .70rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 2px;
-      color: var(--cinza-500);
-      margin-bottom: 4px;
     }
 
-    .right-title {
+    /* Badge de título do painel (opcional — troque o texto conforme o dashboard) */
+    .badge {
+      margin-left: auto;
+      margin-right: var(--gap-xl);
+      padding: 6px 16px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 40px;
+      color: var(--branco);
       font-family: var(--font-display);
-      font-size: 1.10rem;
-      font-weight: 700;
-      color: var(--verde-escuro);
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .5px;
+      white-space: nowrap;
+      position: relative;
+      z-index: 1;
     }
 
     @media (max-width: 768px) {
-      .header {
-        grid-template-columns: 1fr 90px 1fr;
-      }
-      .left-content { padding-left: var(--gap-md); }
-      .right-content { padding-right: var(--gap-md); }
-      .brand-center { width: 90px; height: 70px; }
-      .logo { height: 50px; }
-      .institution-name { display: none; }
-      .dashboard-title { font-size: .85rem; }
-      .right-label { display: none; }
-      .right-title { font-size: .85rem; }
+      .brand-area { width: 108px; }
+      .logo { height: 52px; }
+      .title { font-size: .95rem; }
+      .subtitle { font-size: .60rem; }
+      .badge { display: none; }
+      .divider { margin: 0 var(--gap-md); }
     }
   </style>
 </head>
 <body>
   <header class="header">
 
-    <div class="left-content">
-      <p class="institution-name">Defensoria Pública · MT</p>
-      <h1 class="dashboard-title">Painel Estratégico<br>de Indicadores</h1>
-    </div>
-
-    <div class="brand-center">
-      <img src="../assets/logo-fundo-branco.jpeg"
+    <div class="brand-area">
+      <img src="../assets/logosemfundo.jpg"
            alt="Defensoria Pública do Estado de Mato Grosso"
            class="logo">
     </div>
 
-    <div class="right-content">
-      <span class="right-label">Exercício fiscal</span>
-      <span class="right-title">2025</span>
+    <div class="divider"></div>
+
+    <div class="content">
+      <h1 class="title">Corregedoria-Geral da Defensoria Pública do Estado de Mato Grosso</h1>
+      <p class="subtitle">Secretaria da Corregedoria</p>
     </div>
+
+    <span class="badge">Painel de Atendimento - Homologação</span>
 
   </header>
 </body>
