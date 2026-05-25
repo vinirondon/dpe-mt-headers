@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DPE-MT | Cabeçalho 02 — Escuro Sólido</title>
+  <link rel="stylesheet" href="../css/tokens.css">
+  <style>
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .header {
+      height: 88px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      background: var(--verde-escuro);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Acento geométrico direito */
+    .header::after {
+      content: '';
+      position: absolute;
+      right: -40px;
+      top: -20px;
+      width: 200px;
+      height: 160px;
+      background: var(--verde-principal);
+      transform: rotate(18deg);
+      opacity: .35;
+      pointer-events: none;
+    }
+
+    .brand-area {
+      width: 148px;
+      height: 100%;
+      background: var(--branco);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Barra accent verde-claro na base do logo */
+    .brand-area::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--verde-claro);
+    }
+
+    .logo {
+      height: 68px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .content {
+      padding-left: var(--gap-lg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      font-family: var(--font-body);
+      font-size: .60rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--verde-claro);
+      margin-bottom: 4px;
+    }
+
+    .title {
+      font-family: var(--font-display);
+      color: var(--branco);
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    .right-block {
+      margin-left: auto;
+      padding-right: var(--gap-xl);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 4px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .right-label {
+      font-family: var(--font-display);
+      font-size: .68rem;
+      font-weight: 600;
+      color: rgba(255,255,255,.50);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .right-value {
+      font-family: var(--font-display);
+      font-size: 1.0rem;
+      font-weight: 700;
+      color: var(--branco);
+    }
+
+    @media (max-width: 768px) {
+      .brand-area { width: 108px; }
+      .logo { height: 52px; }
+      .title { font-size: .95rem; }
+      .right-block { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+
+    <div class="brand-area">
+      <img src="../assets/logo-fundo-branco.jpeg"
+           alt="Defensoria Pública do Estado de Mato Grosso"
+           class="logo">
+    </div>
+
+    <div class="content">
+      <p class="eyebrow">Defensoria Pública · Mato Grosso</p>
+      <h1 class="title">Painel Estratégico de Indicadores</h1>
+    </div>
+
+    <div class="right-block">
+      <span class="right-label">Exercício</span>
+      <span class="right-value">2025</span>
+    </div>
+
+  </header>
+</body>
+</html>

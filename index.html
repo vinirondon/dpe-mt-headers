@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DPE-MT | Preview — Cabeçalhos</title>
+  <link rel="stylesheet" href="./css/tokens.css">
+  <style>
+    body {
+      font-family: var(--font-body);
+      background: var(--cinza-100);
+      padding: var(--gap-xl);
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--verde-escuro);
+      margin-bottom: 8px;
+    }
+
+    .intro {
+      color: var(--cinza-500);
+      font-size: .9rem;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background: var(--branco);
+      border-radius: 10px;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 32px;
+      overflow: hidden;
+      border: 1px solid var(--cinza-200);
+    }
+
+    .card-meta {
+      padding: 12px 20px;
+      border-top: 1px solid var(--cinza-200);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .card-name {
+      font-family: var(--font-display);
+      font-size: .85rem;
+      font-weight: 700;
+      color: var(--verde-escuro);
+    }
+
+    .card-file {
+      font-size: .75rem;
+      color: var(--cinza-500);
+      font-family: monospace;
+    }
+
+    .card-link {
+      font-size: .75rem;
+      font-weight: 600;
+      color: var(--verde-principal);
+      text-decoration: none;
+      padding: 4px 12px;
+      border: 1px solid var(--verde-principal);
+      border-radius: 4px;
+    }
+    .card-link:hover { background: var(--verde-suave); }
+
+    iframe {
+      width: 100%;
+      height: 100px;
+      border: none;
+      display: block;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>DPE-MT · Cabeçalhos para Metabase</h1>
+  <p class="intro">Preview de todas as variantes disponíveis. Clique em "Abrir" para inspecionar o HTML individualmente.</p>
+
+  <div class="card">
+    <iframe src="./headers/cabecalho-01-gradiente.html" title="Cabeçalho 01"></iframe>
+    <div class="card-meta">
+      <div>
+        <div class="card-name">01 — Gradiente Horizontal</div>
+        <div class="card-file">headers/cabecalho-01-gradiente.html</div>
+      </div>
+      <a class="card-link" href="./headers/cabecalho-01-gradiente.html" target="_blank">Abrir</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <iframe src="./headers/cabecalho-02-escuro.html" title="Cabeçalho 02"></iframe>
+    <div class="card-meta">
+      <div>
+        <div class="card-name">02 — Escuro Sólido</div>
+        <div class="card-file">headers/cabecalho-02-escuro.html</div>
+      </div>
+      <a class="card-link" href="./headers/cabecalho-02-escuro.html" target="_blank">Abrir</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <iframe src="./headers/cabecalho-03-branco.html" title="Cabeçalho 03"></iframe>
+    <div class="card-meta">
+      <div>
+        <div class="card-name">03 — Branco Institucional</div>
+        <div class="card-file">headers/cabecalho-03-branco.html</div>
+      </div>
+      <a class="card-link" href="./headers/cabecalho-03-branco.html" target="_blank">Abrir</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <iframe src="./headers/cabecalho-04-split.html" title="Cabeçalho 04"></iframe>
+    <div class="card-meta">
+      <div>
+        <div class="card-name">04 — Split Bicolor</div>
+        <div class="card-file">headers/cabecalho-04-split.html</div>
+      </div>
+      <a class="card-link" href="./headers/cabecalho-04-split.html" target="_blank">Abrir</a>
+    </div>
+  </div>
+
+</body>
+</html>
